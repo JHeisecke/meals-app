@@ -12,7 +12,10 @@ class CategoryItem extends StatelessWidget {
       padding: const EdgeInsets.all(15), //when widget reruns,
       // flutter won't rebuilt padding because with const
       // detects that it hasn't changed
-      child: Text(title),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.headline6,
+      ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
