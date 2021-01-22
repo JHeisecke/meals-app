@@ -39,6 +39,20 @@ class MyApp extends StatelessWidget {
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
         MealScreen.routeName: (context) => MealScreen(),
       },
+      //Al tratar de entrar a una pantalla que no esté ruteada aca
+      //onGenerateRoute especificara donde sera redirigido
+      onGenerateRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) => CategoryMealsScreen(),
+        );
+      },
+      //Como ultimo recurso si flutter no encuentra ninguna forma de
+      //cargar una pantalla ejecuta onUknownRoute
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) => CategoryMealsScreen(),
+        );
+      },
     );
   }
 }
