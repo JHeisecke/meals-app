@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
       home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
-        '/': (context) => CategoriesScreen(),
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
         MealScreen.routeName: (context) => MealScreen(),
       },
@@ -48,6 +47,9 @@ class MyApp extends StatelessWidget {
       },
       //Como ultimo recurso si flutter no encuentra ninguna forma de
       //cargar una pantalla ejecuta onUknownRoute
+      //onGenerateRoute is your fallback/ option to have more control about
+      //the creation + configuration of routing actions (= MaterialPageRoute
+      //that then loads a specific screen widget).
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
           builder: (context) => CategoryMealsScreen(),
