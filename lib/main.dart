@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'widgets/screens/tabs_screen.dart';
 import 'widgets/screens/category_meals_screen.dart';
 import 'widgets/screens/meal_screen.dart';
+import 'widgets/screens/filter_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,10 +33,12 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
       ),
-      home: TabsScreen(),
+      initialRoute: '/',
       routes: {
+        '/': (context) => TabsScreen(),
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
         MealScreen.routeName: (context) => MealScreen(),
+        FilterScreen.routeName: (context) => FilterScreen(),
       },
       //Al tratar de entrar a una pantalla que no esté ruteada aca
       //onGenerateRoute especificara donde sera redirigido
